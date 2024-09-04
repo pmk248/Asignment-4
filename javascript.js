@@ -61,8 +61,28 @@ function changeBookName(oldTitle, newTitle){
 
 //// Question 4:
 
-function changeBookName(oldDate, newDate){
+function changeBookDate(oldDate, newDate){
     let book = bookList.find(b => b.published === oldDate)
     book.published = newDate;
     return book;
 }
+
+//// Question 5:
+
+function changeBookGenre(oldGenre, newGenre){
+    let book = bookList.find(b => b.genre === oldGenre)
+    book.genre = newGenre;
+    return book;
+}
+
+//// Question 6:
+
+function changeAuthorAge(authorName, newAge){
+    if (newAge > 80 || newAge < 15){
+        return "Invalid Age";
+    }
+    let author = authorList.find(a => a.name == authorName);
+    author.age = newAge;
+    return author;
+}
+
