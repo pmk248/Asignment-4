@@ -86,3 +86,39 @@ function changeAuthorAge(authorName, newAge){
     return author;
 }
 
+//// Question 7:
+
+let myLibrary = [];
+
+//// Question 8:
+
+function addBookToLibrary(bookTitle){
+    let checker = myLibrary.find(b => b.name == bookTitle)
+    if (checker != null){
+        return "Book already exists in Library";
+    }
+    let book = bookList.find(b => b.title === bookTitle);
+    myLibrary.push(book);
+}
+
+//// Question 9:
+
+function stupidFunction() {
+    // Create authors
+    let author1 = createAuthor("George Orwell", "London", 46);
+    let author2 = createAuthor("Jane Austen", "Hampshire", 41);
+    let author3 = createAuthor("J.K. Rowling", "Edinburgh", 58);
+    let author4 = createAuthor("Mark Twain", "Florida", 74);
+    authorList.push(author1, author2, author3, author4);
+
+    // Create books
+    let book1 = createBook("1984", 1949, "Dystopian", "George Orwell");
+    let book2 = createBook("Pride and Prejudice", 1813, "Romance", "Jane Austen");
+    let book3 = createBook("Harry Potter and the Sorcerer's Stone", 1997, "Fantasy", "J.K. Rowling");
+    let book4 = createBook("The Adventures of Tom Sawyer", 1876, "Adventure", "Mark Twain");
+    bookList.push(book1, book2, book3, book4);
+    addBookToLibrary(book1);
+    addBookToLibrary(book2);
+    addBookToLibrary(book3);
+    addBookToLibrary(book4);
+}
