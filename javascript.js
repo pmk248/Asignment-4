@@ -18,17 +18,22 @@ class Author{
 const authorList = [];
 const bookList = [];
 
-
+// Creates Author, Adds author to authorlist:
 function createAuthor(name, location, age){
-
+    let author = new Author(name, location, age);
+    authorList.push(author);
+    return author;
 }
 
-// Question 1:
+// Creates Book, Finds author by name, Adds created book to booklist:
 function createBook(title, published, genre, authorName){
+
     let author = authorList.find(n => n.name === authorName);
-    let book = new Book(title, published, genre, author)
-    authorList
+    let book = new Book(title, published, genre, author);
+    bookList.push(book);
+    return book;
 }
+
 
 
 
