@@ -30,7 +30,7 @@ function createAuthor(name, location, age){
 // Creates Book, Finds author by name, Adds created book to booklist:
 function createBook(title, published, genre, authorName){
 
-    let author = authorList.find(n => n.name === authorName);
+    let author = authorList.find(a => a.name === authorName);
     let book = new Book(title, published, genre, author);
     bookList.push(book);
     return book;
@@ -39,7 +39,7 @@ function createBook(title, published, genre, authorName){
 //// Question 2:
 
 function getDetails(bookTitle){
-    let book = bookList.find(n => n.Book === bookTitle);
+    let book = bookList.find(b => b.title === bookTitle);
     return {title: book.title,
             published: book.published,
             genre: book.genre,
@@ -53,24 +53,16 @@ function getDetails(bookTitle){
 
 //// Question 3:
 
+function changeBookName(oldTitle, newTitle){
+    let book = bookList.find(b => b.title === oldTitle)
+    book.name = newTitle;
+    return book;
+}
 
+//// Question 4:
 
-
-
-
-
-
-
-
-
-
-const book = {
-    title: "",
-    published: new Date(""),
-    genre: "",
-    author: {
-        firstName: "",
-        lastName: "",
-        age: 0
-    },    
-};
+function changeBookName(oldDate, newDate){
+    let book = bookList.find(b => b.published === oldDate)
+    book.published = newDate;
+    return book;
+}
