@@ -1,5 +1,10 @@
 class Book {
     constructor(title, published, genre, author) {
+        if (typeof title !== 'string') throw new Error("Title must be a string");
+        if (!(published instanceof Date)) throw new Error("Published must be a Date object");
+        if (typeof genre !== 'string') throw new Error("Genre must be a string");
+        if (!(author instanceof Author)) throw new Error("Author must be an instance of Author");
+
         this.title = title;
         this.published = published;
         this.genre = genre;
@@ -7,8 +12,12 @@ class Book {
     }
 }
 
-class Author{
-    constructor(name, location, age){
+class Author {
+    constructor(name, location, age) {
+        if (typeof name !== 'string') throw new Error("Name must be a string");
+        if (typeof location !== 'string') throw new Error("Location must be a string");
+        if (typeof age !== 'number' || !Number.isInteger(age)) throw new Error("Age must be an integer");
+
         this.name = name;
         this.location = location;
         this.age = age;
